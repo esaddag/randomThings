@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Movie Music Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #module {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+
+        #module #collapseExample.collapse:not(.show) {
+            display: block;
+            height: 3rem;
+            overflow: hidden;
+        }
+
+        #module #collapseExample.collapsing {
+            height: 3rem;
+        }
+
+        #module a.collapsed::after {
+            content: '+ Show More';
+        }
+
+        #module a:not(.collapsed)::after {
+            content: '- Show Less';
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="row justify-content-center" style="margin: 30px 0px 30px 0px">
+        <div class="col-3">
+
+            <!--<label th:text="${movieTitle}"></label>
+            <p th:text="${movieOverview}"></p>
+            <img width="100%"  th:src="${movieImg}" th:alt="${movieTitle}">-->
+            <div class="card text-white bg-info" >
+
+                <div class="card-body">
+                    <h3 class="card-title" th:text="${movieTitle}"></h3>
+                    <p class="card-text" th:text="${movieOverview}"></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                <img style="max-height: 640px" class="card-img-top p-2" th:src="${movieImg}" alt="Movie Poster">
+            </div>
+
+        </div>
+        <div class="col-3">
+
+            <div class="card text-white bg-info"  >
+
+                <div class="card-body">
+                    <span class="d-inline-block float-left m-2"><i class="fa fa-music" aria-hidden="true"></i></span>
+                    <h3 class="card-title" th:text="${musicTitle}"></h3>
+                    <span class="d-inline-block float-left ml-2 mr-2"><i class="fa fa-list" aria-hidden="true"></i></span>
+                    <h4 class="card-text" th:text="${album}"></h4>
+                    <span class="d-inline-block float-left ml-2 mr-2"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <h5 class="card-text" th:text="${artists}"></h5>
+                    <a th:href="${spotifyUrl}" class="btn btn-success">Go to Spotify</a>
+
+                </div>
+                <img class="card-img-top p-2"  th:src="${musicImg}" alt="Album Cover">
+            </div>
+            <!--<label th:text="${musicTitle}"></label>
+            <label th:text="${album}"></label>
+            <label th:text="${artists}"></label>
+            <a th:href="${spotifyUrl}">go to spotify</a>
+
+            <iframe th:src="${previewUrl}"></iframe>
+            <img width="100%"  th:src="${musicImg}">-->
+
+        </div>
+        <div class="col-3">
+
+            <div class="card text-white bg-info"  >
+
+                <div class="card-body">
+                    <span class="d-inline-block float-left m-2"><i class="fa fa-book" aria-hidden="true"></i></span>
+                    <h3 class="card-title" th:text="${bookTitle}"></h3>
+                    <span class="d-inline-block float-left ml-2 mr-2"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <h4 class="card-text" th:text="${authors}"></h4>
+                    <span class="d-inline-block float-left ml-2 mr-2"><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    <h5 class="card-text" th:text="${publisher}"></h5>
+                    <span class="d-inline-block float-left ml-2 mr-2"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+                    <div style="margin-bottom:10px ;" id="module">
+                        <p style="margin: 0px" class="collapse" th:text="${description}" id="collapseExample" aria-expanded="false">
+                        </p>
+                        <a role="button" class="collapsed text-warning" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
+
+                    </div>
+
+                    <a th:href="${gBooksUrl}" class="btn btn-primary">Go to Google Books</a>
+
+                </div>
+                <img class="card-img-top p-2"  th:src="${bookImg}" alt="Album Cover">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
