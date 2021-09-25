@@ -1,2 +1,2 @@
 # randomThings
-Random movie, music and book recommendation app.
+Random movie, music and book recommendation application.
